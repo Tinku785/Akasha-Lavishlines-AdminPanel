@@ -138,12 +138,12 @@ const Bookings = ({ bookings, onUpdateBooking, onCancelBooking }) => {
                                     onChange={(e) => setEditForm({ ...editForm, route: e.target.value })}
                                     className="w-full px-4 py-2 bg-white border border-slate-300 rounded-lg focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-500"
                                 >
-                                    <option>Golaghat -> Guwahati</option>
-                                    <option>Golaghat -> Bokakhat</option>
-                                    <option>Golaghat -> Kamarbandha</option>
-                                    <option>Guwahati -> Golaghat</option>
-                                    <option>Guwahati -> Bokakhat</option>
-                                    <option>Guwahati -> Kamarbandha</option>
+                                    <option value="Golaghat -> Guwahati">Golaghat {'->'} Guwahati</option>
+                                    <option value="Golaghat -> Bokakhat">Golaghat {'->'} Bokakhat</option>
+                                    <option value="Golaghat -> Kamarbandha">Golaghat {'->'} Kamarbandha</option>
+                                    <option value="Guwahati -> Golaghat">Guwahati {'->'} Golaghat</option>
+                                    <option value="Guwahati -> Bokakhat">Guwahati {'->'} Bokakhat</option>
+                                    <option value="Guwahati -> Kamarbandha">Guwahati {'->'} Kamarbandha</option>
                                 </select>
                             </div>
 

@@ -154,12 +154,12 @@ const NewBooking = ({ onAddBooking }) => {
                                             name="route" value={formData.route} onChange={handleRouteChange}
                                             className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-500 transition-all font-medium text-slate-800 appearance-none"
                                         >
-                                            <option>Golaghat -> Guwahati</option>
-                                            <option>Golaghat -> Bokakhat</option>
-                                            <option>Golaghat -> Kamarbandha</option>
-                                            <option>Guwahati -> Golaghat</option>
-                                            <option>Guwahati -> Bokakhat</option>
-                                            <option>Guwahati -> Kamarbandha</option>
+                                            <option value="Golaghat -> Guwahati">Golaghat {'->'} Guwahati</option>
+                                            <option value="Golaghat -> Bokakhat">Golaghat {'->'} Bokakhat</option>
+                                            <option value="Golaghat -> Kamarbandha">Golaghat {'->'} Kamarbandha</option>
+                                            <option value="Guwahati -> Golaghat">Guwahati {'->'} Golaghat</option>
+                                            <option value="Guwahati -> Bokakhat">Guwahati {'->'} Bokakhat</option>
+                                            <option value="Guwahati -> Kamarbandha">Guwahati {'->'} Kamarbandha</option>
                                         </select>
                                     </div>
                                 </div>
