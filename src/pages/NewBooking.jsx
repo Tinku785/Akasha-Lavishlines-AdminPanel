@@ -250,7 +250,7 @@ const NewBooking = ({ onAddBooking }) => {
 
                         <div className="relative z-10 border-b-2 border-dashed border-slate-700 pb-6 mb-6">
                             <h4 className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-1">Preview Ticket</h4>
-                            <h2 className="text-xl font-bold text-yellow-500">Akasha Levishlines<span className="text-white">.</span></h2>
+                            <h2 className="text-xl font-bold text-yellow-500">Akasha Lavishlines<span className="text-white">.</span></h2>
                         </div>
 
                         <div className="space-y-6 relative z-10">

@@ -36,7 +36,7 @@ const Login = () => {
                         <img src="/logo.jpg" alt="Logo" className="relative w-full h-full rounded-2xl shadow-inner border border-white/20 object-cover" />
                     </div>
 
-                    <h1 className="text-2xl font-bold text-white tracking-tight">Akasha Levishlines</h1>
+                    <h1 className="text-2xl font-bold text-white tracking-tight">Akasha Lavishlines</h1>
                     <p className="text-slate-400 mt-2 text-sm font-medium">Authorized Staff Only</p>
                 </div>
 

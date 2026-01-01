@@ -1,11 +1,11 @@
 
-# 🚌 Akasha Levishlines - Bus Admin Dashboard
+# 🚌 Akasha Lavishlines - Bus Admin Dashboard
 
 ![Project Status](https://img.shields.io/badge/Status-Active-success)
 ![Version](https://img.shields.io/badge/Version-2.0.0-blue)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 
-**Akasha Levishlines Admin** is a modern, high-performance web application designed to streamline bus ticketing operations. It provides a comprehensive interface for administrators to manage bookings, track revenue, and issue instant tickets with a premium, user-friendly experience.
+**Akasha Lavishlines Admin** is a modern, high-performance web application designed to streamline bus ticketing operations. It provides a comprehensive interface for administrators to manage bookings, track revenue, and issue instant tickets with a premium, user-friendly experience.
 
 ## ✨ Key Features
 
@@ -46,8 +46,8 @@
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/Tinku785/Akasha-Levishlines-AdminPanel.git
-    cd akasha-levishlines-admin
+    git clone https://github.com/Tinku785/Akasha-Lavishlines-AdminPanel.git
+    cd akasha-lavishlines-admin
     ```
 
 2.  **Install Dependencies**
@@ -81,4 +81,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-**Developed for Akasha Levishlines**
+**Developed for Akasha Lavishlines**

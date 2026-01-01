@@ -34,7 +34,7 @@ const Sidebar = ({ isOpen, closeSidebar, user, onLogout }) => {
                         <img src="/logo.jpg" alt="Logo" className="w-10 h-10 rounded-xl shadow-lg shadow-yellow-500/20 object-cover" />
                         <div>
                             <h1 className="text-sm font-bold font-sans text-white tracking-tight leading-none">
-                                Akasha <span className="text-yellow-500">Levishlines</span>
+                                Akasha <span className="text-yellow-500">Lavishlines</span>
                             </h1>
                             <p className="text-xs text-slate-400 font-medium">Internal Portal</p>
                         </div>
