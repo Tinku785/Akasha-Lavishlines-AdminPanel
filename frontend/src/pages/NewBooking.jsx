@@ -31,6 +31,9 @@ const NewBooking = ({ onAddBooking }) => {
         } else if (route.includes('Guwahati -> Kamarbandha')) {
             departure = '14:30';
             arrival = '20:00';
+        } else if (route.includes('Kamarbandha -> Guwahati')) {
+            departure = '06:30';
+            arrival = '12:00';
         } else if (route.includes('Guwahati')) { // Fallback for plain 'Guwahati' or 'Golaghat -> Guwahati'
             departure = '06:00';
             arrival = '12:30';
@@ -159,12 +162,12 @@ const NewBooking = ({ onAddBooking }) => {
                                             name="route" value={formData.route} onChange={handleRouteChange}
                                             className="w-full pl-10 pr-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:bg-white focus:ring-2 focus:ring-yellow-500/20 focus:border-yellow-500 transition-all font-medium text-slate-800 appearance-none"
                                         >
+                                            <option value="Kamarbandha -> Guwahati">Kamarbandha {'->'} Guwahati</option>
                                             <option value="Golaghat -> Guwahati">Golaghat {'->'} Guwahati</option>
-                                            <option value="Golaghat -> Bokakhat">Golaghat {'->'} Bokakhat</option>
-                                            <option value="Golaghat -> Kamarbandha">Golaghat {'->'} Kamarbandha</option>
                                             <option value="Guwahati -> Golaghat">Guwahati {'->'} Golaghat</option>
-                                            <option value="Guwahati -> Bokakhat">Guwahati {'->'} Bokakhat</option>
                                             <option value="Guwahati -> Kamarbandha">Guwahati {'->'} Kamarbandha</option>
+                                            <option value="Golaghat -> Bokakhat">Golaghat {'->'} Bokakhat</option>
+                                            <option value="Guwahati -> Bokakhat">Guwahati {'->'} Bokakhat</option>
                                         </select>
                                     </div>
                                 </div>
