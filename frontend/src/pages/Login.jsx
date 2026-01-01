@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Bus, Lock, Mail, ArrowRight } from "lucide-react";
+import { login } from "../services/api";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -9,14 +10,21 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
 
-        // Direct navigation as user requested, no logic.
-        setTimeout(() => {
+        try {
+            const res = await login({ email, password });
+            localStorage.setItem("token", res.data.token);
+            // Optionally store user data if App uses it, or just rely on token
             navigate("/dashboard");
-        }, 500);
+        } catch (error) {
+            console.error(error);
+            alert("Invalid credentials / Server Error");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (

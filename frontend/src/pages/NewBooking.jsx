@@ -50,7 +50,7 @@ const NewBooking = ({ onAddBooking }) => {
         return time;
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Convert to AM/PM for display consistency in other parts of app
@@ -68,16 +68,21 @@ const NewBooking = ({ onAddBooking }) => {
             arrival: format12h(formData.arrival)
         };
 
-        const newId = onAddBooking ? onAddBooking(finalData) : `BK${Math.floor(Math.random() * 1000)}`;
-        setSuccessId(newId);
+        try {
+            const newId = onAddBooking ? await onAddBooking(finalData) : `BK${Math.floor(Math.random() * 1000)}`;
+            setSuccessId(newId);
 
-        setTimeout(() => {
-            setSuccessId('');
-            setFormData({
-                name: '', phone: '', date: '', route: 'Golaghat -> Guwahati',
-                seat: '', fare: '', departure: '06:00', arrival: '12:30'
-            });
-        }, 3000);
+            setTimeout(() => {
+                setSuccessId('');
+                setFormData({
+                    name: '', phone: '', date: '', route: 'Golaghat -> Guwahati',
+                    seat: '', fare: '', departure: '06:00', arrival: '12:30'
+                });
+            }, 3000);
+        } catch (error) {
+            console.error(error);
+            alert("Failed to create booking");
+        }
     };
 
     return (
