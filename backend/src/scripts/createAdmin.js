@@ -2,20 +2,27 @@ import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv";
 import Admin from "../models/Admin.js";
-import path from 'path';
-import { fileURLToPath } from 'url';
+import path from "path";
+import { fileURLToPath } from "url";
 
-// Load env from root
+// Resolve .env path safely
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.join(__dirname, '../../.env') });
+dotenv.config({ path: path.join(__dirname, "../../.env") });
 
 const createAdmin = async () => {
     try {
-        await mongoose.connect(process.env.MONGO_URI);
-        console.log("Connected to DB for seeding...");
+        if (!process.env.MONGO_URI) {
+            throw new Error("MONGO_URI not found in env");
+        }
+        if (!process.env.ADMIN_EMAIL || !process.env.ADMIN_PASSWORD) {
+            throw new Error("ADMIN_EMAIL or ADMIN_PASSWORD missing in env");
+        }
 
-        const email = "admin@akasha.com";
-        const password = "admin123";
+        await mongoose.connect(process.env.MONGO_URI);
+        console.log("✅ Connected to DB for admin seeding");
+
+        const email = process.env.ADMIN_EMAIL;
+        const password = process.env.ADMIN_PASSWORD;
 
         const adminExists = await Admin.findOne({ email });
 
@@ -24,19 +31,19 @@ const createAdmin = async () => {
             process.exit(0);
         }
 
-        const hashedPassword = await bcrypt.hash(password, 10);
+        const hashedPassword = await bcrypt.hash(password, 12);
 
         await Admin.create({
             email,
-            password: hashedPassword
+            password: hashedPassword,
         });
 
         console.log("✅ Admin created successfully");
         console.log(`📧 Email: ${email}`);
-        console.log(`🔑 Password: ${password}`);
+        console.log("🔐 Password: [HIDDEN]");
         process.exit(0);
     } catch (error) {
-        console.error("❌ Error:", error.message);
+        console.error("❌ Error creating admin:", error.message);
         process.exit(1);
     }
 };
