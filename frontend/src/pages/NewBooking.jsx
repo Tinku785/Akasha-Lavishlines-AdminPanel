@@ -19,8 +19,8 @@ const NewBooking = ({ onAddBooking }) => {
     // Auto-update times based on route
     const handleRouteChange = (e) => {
         const route = e.target.value;
-        let departure = '06:00';
-        let arrival = '12:00';
+        let departure = '00:00';
+        let arrival = '00:00';
 
         if (route.includes('Guwahati -> Golaghat')) {
             departure = '14:00';
